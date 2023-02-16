@@ -106,7 +106,7 @@ const Navbar = (props) => {
         <Grid container sx={styles.root}>
             <Grid container item xs={6} alignContent='center'>
                 <Grid item sx={styles.image}>
-                    <img src={"/HN/images/apple-touch-icon.png"} alt="as" style={styles.image} onClick={() => navigate(ROUTES.DASHBOARD)} />
+                    <img src={"/images/apple-touch-icon.png"} alt="as" style={styles.image} onClick={() => navigate(ROUTES.DASHBOARD)} />
                 </Grid>
             </Grid>
             <Grid item container xs={6} sx={styles.navbarItemsGrid} spacing={5}>
