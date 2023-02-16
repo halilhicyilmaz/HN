@@ -5,7 +5,7 @@
 
 //#TODO if you need any function below uncomment that function
 // simulate api request
-const timeout = (data) => new Promise(resolve => setTimeout(() => resolve(data), 2000))
+const timeout = (data) => new Promise(resolve => setTimeout(() => resolve(data), 0))
 
 // class timer {
 //     constructor(callback, delay) {
