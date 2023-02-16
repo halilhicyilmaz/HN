@@ -1,4 +1,5 @@
 {
+  "homepage": "http://halilhicyilmaz.github.io/HN",
   "name": "react-starter-js",
   "version": "0.1.0",
   "private": true,
@@ -27,6 +28,8 @@
   },
   "scripts": {
     "start": "env-cmd -f .env.test react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "env-cmd -f .env.production react-scripts build",
     "build:production": "env-cmd -f .env.production npm run build",
     "build:test": "env-cmd -f .env.test react-scripts build",
@@ -52,5 +55,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
