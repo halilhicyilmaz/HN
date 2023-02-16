@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#root {
+  overflow: hidden;
+}
+* {
+  box-sizing:border-box;
+  margin: 0;
+  scroll-behavior: smooth;
+  
+}
+
+/* Disables spinner at the end of the html input element with type number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    display: none;
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+@font-face {
+  font-family: "NouvelR-Regular";
+  src: url('./assets/fonts/NouvelR-Regular.ttf');
+  /* IE9 Compat Modes */
+  src: local('NouvelR-Regular'), local('NouvelR-Regular'),
+    url("./assets/fonts/NouvelR-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "NouvelR-Bold";
+  src: url('./assets/fonts/NouvelR-Bold.ttf');
+  /* IE9 Compat Modes */
+  src: local('NouvelR-Bold'), local('NouvelR-Bold'),
+    url("./assets/fonts/NouvelR-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "NouvelR-Book";
+  src: url('./assets/fonts/NouvelR-Book.ttf');
+  /* IE9 Compat Modes */
+  src: local('NouvelR-Book'), local('NouvelR-Book'),
+    url("./assets/fonts/NouvelR-Book.ttf") format("truetype");
+  font-weight: normal;
+}
