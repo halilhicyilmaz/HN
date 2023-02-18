@@ -27,7 +27,7 @@ export default function SubmitButton(props) {
             color: '#ffffff',
 
             '&:hover': {
-                backgroundColor: '#FFCC33',
+                backgroundColor: '#209CEE',
                 color: '#000000',
             },
             ...style

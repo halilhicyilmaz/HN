@@ -4,7 +4,7 @@ import { ROUTES } from '../utils/constants'
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 
 //Pages
-import { ProtectedPage, PublicPage } from '../pages/index'
+import { CalculateNumber, ProtectedPage, PublicPage } from '../pages/index'
 
 // ROUTES
 import PublicRoute from "./PublicRoute";
@@ -47,12 +47,12 @@ const AppRouter = () => {
     }
 
     const protectedRoutes = [
-        { path: ROUTES.PROTECTED, element: ProtectedPage, },
         { path: ROUTES.DASHBOARD, element: ProtectedPage, },
+        { path: ROUTES.CALCULATE_NUMBER, element: CalculateNumber, },
     ]
     const publicRoutes = [
-        { path: ROUTES.PUBLIC, element: PublicPage, },
         { path: ROUTES.DEFAULT, element: PublicPage, },
+        { path: ROUTES.PUBLIC, element: PublicPage, },
     ]
 
     const getProtectedRoutes = useCallback(() => {

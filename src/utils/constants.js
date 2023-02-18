@@ -2,7 +2,7 @@
 
 const DEFAULT_LANGUAGE = 'tr'
 
-const NAVBAR_LIST = ['protected']
+const NAVBAR_LIST = ['calculate-number']
 
 const HEADERS = {
     AUTHORIZATION: 'authorization',
@@ -21,6 +21,7 @@ const ROUTES = {
     PROTECTED: '/protected',
     PUBLIC: '/public',
     DASHBOARD: '/dashboard',
+    CALCULATE_NUMBER: '/calculate-number'
 }
 
 /**

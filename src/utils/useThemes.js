@@ -70,6 +70,7 @@ const useThemes = () => {
           md: 900,
           // large
           lg: 1200,
+          tablet: 680,
           // extra-large
           xl: 1600,
         }

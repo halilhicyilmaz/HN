@@ -28,7 +28,7 @@ export default function CustomLoadingButton(props) {
             fontSize: '20px',
             fontFamily: DEFAULT_THEME.typography.fontFamilyRegular,
             '&:hover': {
-                backgroundColor: '#FFCC33',
+                backgroundColor: '#209CEE',
                 color: '#000000',
             },
             ...style

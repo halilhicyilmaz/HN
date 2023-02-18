@@ -26,7 +26,7 @@ export default function PrimaryButton(props) {
             fontSize: fontSize,
 
             '&:hover': {
-                backgroundColor: '#FFCC33',
+                backgroundColor: '#209CEE',
                 color: '#000000',
             },
             ...style

@@ -47,7 +47,7 @@ const styles = {
     },
     navbarSelected: {
         fontSize: "20px",
-        color: "#209cee",
+        color: "#209CEE",
         display: "inline",
         "&:hover": { cursor: "pointer" }
     },

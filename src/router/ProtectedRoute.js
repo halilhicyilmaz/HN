@@ -15,6 +15,7 @@ import Navbar from '../components/common/Navbar'
 
 // Redux
 import { useSelector } from 'react-redux'
+import MainCard from '../components/common/MainCard';
 
 // Services
 
@@ -32,8 +33,12 @@ const ProtectedRoute = (props) => {
             <Grid container>
                 <Navbar />
                 {!redirect &&
-                    <Grid container sx={{ mt: "110px" }}>
-                        <Element />
+                    <Grid container justifyContent={"center"}>
+                        <Grid container item xs={10}>
+                            <MainCard>
+                                <Element />
+                            </MainCard>
+                        </Grid>
                     </Grid>
                 }
             </Grid>
