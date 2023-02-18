@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/HN/static/css/main.90b0c401.css",
-    "main.js": "/HN/static/js/main.55e54b0a.js",
-    "static/js/27.8222a171.chunk.js": "/HN/static/js/27.8222a171.chunk.js",
+    "main.js": "/HN/static/js/main.8578c338.js",
+    "static/js/27.3dea6460.chunk.js": "/HN/static/js/27.3dea6460.chunk.js",
     "static/media/NouvelR-Book.ttf": "/HN/static/media/NouvelR-Book.ea3f68dc0198f4fea931.ttf",
     "static/media/NouvelR-Regular.ttf": "/HN/static/media/NouvelR-Regular.654781db8ae987df54d0.ttf",
     "static/media/NouvelR-Bold.ttf": "/HN/static/media/NouvelR-Bold.b9386c4f6df681e7b3a5.ttf",
@@ -10,6 +10,6 @@
   },
   "entrypoints": [
     "static/css/main.90b0c401.css",
-    "static/js/main.55e54b0a.js"
+    "static/js/main.8578c338.js"
   ]
 }
