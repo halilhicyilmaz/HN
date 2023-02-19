@@ -32,6 +32,7 @@ export default {
             "calculate-number": 'Calculate Number',
             "/calculate-number": 'Calculate Number',
             Number: 'Add Number',
+            addNumber: 'Add Number',
             targetValue: 'Target Value',
             numberList: 'Number List',
             calculate: 'Calculate',
