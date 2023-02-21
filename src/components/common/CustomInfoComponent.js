@@ -72,6 +72,7 @@ const CustomInfoComponent = (props) => {
             inputProps={{
                 maxLength: length,
                 style: { ...styles.input.style, color: 'black' },
+                step: 'any'
             }}
             InputProps={{
                 endAdornment:
