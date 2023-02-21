@@ -1,48 +1,56 @@
-const closestCombination = (arr, num, n) => {
-    let closest = Infinity;
-    let closestArr = [];
+const findClosestSum = (arr, target, n) => {
+    const combinations = getAllCombinations(arr, n);
 
-    function findClosestCombination(arr, data, start, end, index, n, num) {
-        if (index === n) {
-            let sum = data.reduce((a, b) => a + b, 0);
-            let diff = Math.abs(num - sum);
-            if (diff < closest) {
-                closest = diff;
-                closestArr = [...data];
-            }
-            return;
+    let closestSum = -Infinity;
+    let closestCombo;
+
+    for (let combo of combinations) {
+        const sum = combo.reduce((a, b) => a + b);
+        if (sum >= target && (sum < closestSum || closestSum === -Infinity)) {
+            closestSum = sum;
+            closestCombo = combo;
         }
-        for (let i = start; i <= end && end - i + 1 >= n - index; i++) {
-            data[index] = arr[i];
-            findClosestCombination(arr, data, i + 1, end, index + 1, n, num);
+        if (arr.length === n && sum < target) {
+            closestSum = sum;
+            closestCombo = combo;
         }
     }
 
-    findClosestCombination(arr, [], 0, arr.length - 1, 0, n, num);
-    const total = closestArr.reduce((partialSum, a) => partialSum + a, 0)
-    return [closestArr, total]
+    return [closestCombo, closestSum];
+}
+
+const getAllCombinations = (arr, n) => {
+    const results = [];
+
+    const helper = (start, combination) => {
+        if (combination.length === n) {
+            results.push(combination);
+            return;
+        }
+        for (let i = start; i < arr.length; i++) {
+            helper(i + 1, combination.concat(arr[i]));
+        }
+    }
+
+    helper(0, []);
+
+    return results;
 }
 
 const calculateClosestCombination = (array, target) => {
-    let higherClosest = [[], Infinity]
-    let lowerClosest = [[], -Infinity]
+    let closest = [[], Infinity]
 
     for (let i = 1; i <= array.length; i++) {
-        const result = closestCombination(array, target, i)
-        if (result[1] >= target) {
-            if (higherClosest[1] >= result[1]) {
-                higherClosest = result
-            }
-        } else {
-            lowerClosest = result
+        const result = findClosestSum(array, target, i)
+
+        if (closest[1] >= result[1] && result[1] !== -Infinity) {
+            closest = result
+        }
+        if (closest[1] < target && i === array.length) {
+            closest = result
         }
     }
-
-    if (higherClosest[1] < Infinity) {
-        return higherClosest
-    } else {
-        return lowerClosest
-    }
+    return closest
 }
 
 export {

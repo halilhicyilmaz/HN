@@ -41,7 +41,8 @@ const CalculateNumber = (props) => {
     const [targetValue, setTargetValue] = useState('')
     const [result, setResult] = useState(undefined)
 
-    const onAddNumber = () => {
+    const onAddNumber = (e) => {
+        e.preventDefault()
         setNumberList((prev) => [...prev, parseFloat(number)])
         setNumber('')
     }
@@ -52,7 +53,8 @@ const CalculateNumber = (props) => {
         setNumberList(array)
     }
 
-    const onCalculate = () => {
+    const onCalculate = (e) => {
+        e.preventDefault()
         setResult(calculateClosestCombination(numberList, targetValue))
 
     }
@@ -66,32 +68,45 @@ const CalculateNumber = (props) => {
 
     return <Grid container spacing={3}>
         <Grid item container tablet={7} xs={12} sx={styles.root} spacing={3}>
-            <Grid item tablet={6} xs={12}>
-                <CustomInfoComponent
-                    sendInfo={t("number")}
-                    value={number}
-                    setValue={setNumber}
-                    type='number'
-                />
+            <Grid item xs={12}>
+                <form onSubmit={onAddNumber}>
+                    <Grid container spacing={3}>
+                        <Grid item tablet={6} xs={12}>
+                            <CustomInfoComponent
+                                sendInfo={t("number")}
+                                value={number}
+                                setValue={setNumber}
+                                type='number'
+                            />
+                        </Grid>
+                        <Grid item tablet={6} xs={12} sx={styles.addButtonGrid}>
+                            <AddButtonBig onClick={onAddNumber} style={styles.buttons} disabled={!number}>{t("addNumber")}</AddButtonBig>
+                        </Grid>
+                    </Grid>
+                </form>
             </Grid>
-            <Grid item tablet={6} xs={12} sx={styles.addButtonGrid}>
-                <AddButtonBig onClick={onAddNumber} style={styles.buttons} disabled={!number}>{t("addNumber")}</AddButtonBig>
-            </Grid>
-            <Grid item tablet={6} xs={12}>
-                <CustomInfoComponent
-                    sendInfo={t("targetValue")}
-                    value={targetValue}
-                    setValue={setTargetValue}
-                    type='number'
-                />
-            </Grid>
-            <Grid item container justifyContent='center' spacing={3} textAlign="center">
-                <Grid item tablet={6} xs={12}>
-                    <PrimaryButton onClick={onCalculate} style={styles.buttons} disabled={numberList.length < 1 || !targetValue}>{t('calculate')}</PrimaryButton>
-                </Grid>
-                <Grid item tablet={6} xs={12}>
-                    <DeclineButton onClick={onClear} style={styles.buttons}>{t('clear')}</DeclineButton>
-                </Grid>
+            <Grid item xs={12}>
+                <form onSubmit={onCalculate}>
+                    <Grid container spacing={3}>
+                        <Grid item tablet={6} xs={12}>
+                            <CustomInfoComponent
+                                sendInfo={t("targetValue")}
+                                value={targetValue}
+                                setValue={setTargetValue}
+                                type='number'
+                            />
+                        </Grid>
+                        <Grid item container justifyContent='center' spacing={3} textAlign="center">
+                            <Grid item tablet={6} xs={12}>
+                                <PrimaryButton onClick={onCalculate} style={styles.buttons} disabled={numberList.length < 1 || !targetValue}>{t('calculate')}</PrimaryButton>
+                            </Grid>
+
+                            <Grid item tablet={6} xs={12}>
+                                <DeclineButton onClick={onClear} style={styles.buttons}>{t('clear')}</DeclineButton>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </form>
             </Grid>
             {result &&
                 <Grid item container justifyContent='center'>
